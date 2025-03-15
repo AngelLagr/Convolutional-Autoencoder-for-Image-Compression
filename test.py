@@ -44,7 +44,7 @@ with torch.no_grad():
     reconstructions = model(images)
     
 # Convert to CPU for visualization
-images = images.cpu().numpy().transpose(0, 2, 3, 1)  # Rearrange dimensions for plotting
+images = images.cpu().numpy().transpose(0, 2, 3, 1) 
 reconstructions = reconstructions.cpu().numpy().transpose(0, 2, 3, 1)
 
 # Plot original vs reconstructed images
@@ -61,16 +61,16 @@ plt.show()
 print("Reconstructed images plotted\n")
 
 # Load the test
-image_path = "./bigimage2.jpg"  # Mets un chemin valide
+image_path = "./bigimage.jpg"
 original_image = Image.open(image_path)
 transform = transforms.Compose([
-    transforms.Resize((512, 512)),  # Redimensionner à 64x64
-    transforms.ToTensor(),         # Convertir en Tensor
+    transforms.Resize((512, 512)), 
+    transforms.ToTensor(),        
 ])
-input_image = transform(original_image).unsqueeze(0)  # Ajouter une dimension pour le batch
+input_image = transform(original_image).unsqueeze(0)  
 
 # Seek the original size of the picture
-original_size = os.path.getsize(image_path) / 1024  # Taille en Ko
+original_size = os.path.getsize(image_path) / 1024  # Size in Ko
 print(f"Original Image Size: {original_size:.2f} KB")
 
 input_image = input_image.to(device)
@@ -90,11 +90,11 @@ print(f"Compression Ratio: {compression_ratio:.2f}x")
 
 # Reconstruct the encoded picture
 with torch.no_grad():
-    reconstructed_image = model.decoder(encoded)  # Passer par le décodeur pour obtenir l'image reconstruite
+    reconstructed_image = model.decoder(encoded)  # Reconstruct the picture
 
 # Prepare the plot
-original_image = original_image.resize((512, 512))  # Redimensionner l'image originale
-reconstructed_image = reconstructed_image.squeeze(0).cpu().numpy().transpose(1, 2, 0)  # Convertir en format affichage
+original_image = original_image.resize((512, 512)) 
+reconstructed_image = reconstructed_image.squeeze(0).cpu().numpy().transpose(1, 2, 0)  
 
 # Plot the difference
 fig, ax = plt.subplots(1, 2, figsize=(12, 6))
