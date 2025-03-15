@@ -3,7 +3,7 @@ This project focuses on image compression using a convolutional autoencoder. The
 
 The convolutional autoencoder model is trained to learn efficient image representations. It uses a mean squared error (MSE) loss function to minimize the difference between the original and the reconstructed images. The model is implemented using PyTorch and trained using the Adam optimizer.
 
-The model is trained on EuroSAT images, resized to 64x64 pixels, and evaluated on the ability to reconstruct the images after compression.
+The model is trained on EuroSAT images, resized to 64x64 pixels during the training process, and evaluated on the ability to reconstruct the images after compression.
 
 
 ---
