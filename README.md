@@ -17,11 +17,6 @@ The model is trained on EuroSAT images, resized to 64x64 pixels, and evaluated o
 
 ---
 
-## Final Objective  
-The primary objective is to create a convolutional autoencoder capable of compressing satellite images effectively while retaining their visual quality. In the long term, the model will be adapted for use in embedded systems with limited processing power, facilitating efficient transmission of satellite data in real-time.
-
----
-
 ## Technologies Used  
 - **Python**  
 - **PyTorch** (for building and training the convolutional autoencoder)  
