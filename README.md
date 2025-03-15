@@ -13,7 +13,7 @@ The model is trained on EuroSAT images, resized to 64x64 pixels, and evaluated o
 - **`test.py`**: Script to test the model on images from the dataset.  
 - **`convAutoencoder.py`**: Defines the architecture of the convolutional autoencoder model.  
 - **`autoencoder.pth`**: File storing the trained model weights.  
-- **`results.png`**: Visual comparison between original and compressed images (to be generated after running the model).  
+- **`bigimage.png`**: A bigger picture to test the compression in **test.py** 
 
 ---
 
